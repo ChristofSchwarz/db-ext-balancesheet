@@ -13,6 +13,9 @@
   width: 50%;
   text-align: center;
 }
+.bsh-header-cell span {
+  font-weight: normal;
+}
 
 .bsh-body-cell {
   width: 50%;

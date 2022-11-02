@@ -18,6 +18,12 @@ define(["jquery"], function ($) {
                         expression: 'optional',
                         ref: "pVarNameDefaultVal",
                         defaultValue: '*',
+                    }, {
+                        label: "Money Symbol",
+                        type: "string",
+                        expression: 'optional',
+                        ref: "pMoneySymbol",
+                        defaultValue: '€',
                     },
 
                     subSection('Assets', [

@@ -70,10 +70,14 @@ define(["qlik", "jquery", "./props", "text!./styles.css"
             $element.html(`
             <div id="${ownId}_parent" class="bsh-parent">
                 <div class="bsh-header-row">
-                    <div class="bsh-header-cell">${layout.pAssetsLabel}</div>
+                    <div class="bsh-header-cell">${layout.pAssetsLabel}<br>
+                        <span>${layout.pMoneySymbol} ${Math.round(layout.pFixedAssets + layout.pCurrentAssets).toLocaleString()}</span>
+                    </div>
                     <div class="bsh-spacer-width  bsh-spacer-width1"></div>
                     <div class="bsh-spacer-width"></div>
-                    <div class="bsh-header-cell">${layout.pLiabilitiesLabel}</div>
+                    <div class="bsh-header-cell">${layout.pLiabilitiesLabel}<br>
+                        <span>${layout.pMoneySymbol} ${Math.round(layout.pPayables + layout.pEquity).toLocaleString()}</span>
+                    </div>
                 </div>
                 <div class="bsh-spacer-row  bsh-spacer-row1">
                     <div class="bsh-spacer-row-cell  bsh-spacer-row-cell1"></div>
@@ -85,22 +89,22 @@ define(["qlik", "jquery", "./props", "text!./styles.css"
                 </div>
                 <div class="bsh-body-row">
                 <div class="bsh-body-cell  bsh-body-cell-asst">
-                    <div class="bsh-innerbox  bsh-fa" title="${layout.pFixedAssets}">
+                    <div class="bsh-innerbox  bsh-fa" title="${Math.round(layout.pFixedAssets).toLocaleString()}">
                         ${layout.pFixedAssetsLabel}
                     </div>
                     <div class="bsh-inner-spacer"></div>
-                    <div class="bsh-innerbox  bsh-ca" title="${layout.pCurrentAssets}">
+                    <div class="bsh-innerbox  bsh-ca" title="${Math.round(layout.pCurrentAssets).toLocaleString()}">
                         ${layout.pCurrentAssetsLabel}
                     </div>
                 </div>
                 <div class="bsh-spacer-width  bsh-spacer-width1"></div>
                 <div class="bsh-spacer-width"></div>
                 <div class="bsh-body-cell  bsh-body-cell-liab">
-                    <div class="bsh-innerbox  bsh-pa" title="${layout.pPayables}">
+                    <div class="bsh-innerbox  bsh-pa" title="${Math.round(layout.pPayables).toLocaleString()}">
                         ${layout.pPayablesLabel}
                     </div>
                     <div class="bsh-inner-spacer"></div>
-                    <div class="bsh-innerbox  bsh-eq" title="${layout.pEquity}">
+                    <div class="bsh-innerbox  bsh-eq" title="${Math.round(layout.pEquity).toLocaleString()}">
                         ${layout.pEquityLabel}
                     </div>
                 </div>
